@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+    <title>Stay Details</title>
+</head>
+<body class="detail-page">
+    <header>
+      <a href="Index.html" class="logo">
+        <span class="logo-icon">🏃</span>
+        <span>Tianzhong Stay</span>
+      </a>
+      <div class="navbar">
+        <section class="page">
+          <a href="stays.html">Stays</a>
+          <a href="Index.html#about">About</a>
+          <a href="Index.html#contact">Contact</a>
+        </section>
+      </div>
+    </header>
+    <!-- BACK BUTTON-->
+    <div class="back-bar">
+        <button class="btn-back" onclick="goBack()">← Back to Stays</button>
+    </div>
+    <!-- DETAIL CONTENT -->
+    <main class="detail">
+    <h2>Stay Details</h2>
+        <div id="detail-container"></div>
+    <!--BOOING FORM-->
+    <div id="booking-section">
+        <div class="booking-card">
+            <div class="booking-header">
+                <h2>📋 Book This Stay</h2>
+                <p>Please fill out your details. Only verified marathon contestants can book.</p>
+            </div>
+            <form id="bookingForm" novalidate>
+                <div class="form-section-title">👤 Personal Information</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="e.g. Wang Da-Ming" required>
+                            <span class="error-msg" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="e.g. runner@email.com" required>
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label> 
+                            <input type="tel" id="phone" placeholder="e.g.0912-345-678" required>
+                            <span class="error-msg" id="phoneError"></span> 
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests *</label> 
+                            <input type="number" id="guests" placeholder="e.g. 2" min="1" required>
+                            <span class="error-msg" id="guestsError"></span> 
+                        </div>   
+                    </div>
+                    <div class="form-section-title">🏅 Marathon Contestant Verification</div>
+                        <p class="form-note">⚠️ This accommodation is reserved for registered marathon contestants only.</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bibNumber">Race Bib Number *</label>
+                                <input type="text" id="bibNumber" placeholder="e.g. TZ-2026-00123" required>
+                                <span class="error-msg" id="bibNumberError"></span>
+                            </div>
+                            <div class="form-group">
+                            <label for="raceCategory">Race Category *</label>
+                            <select id="raceCategory" required>
+                                <option value="">Select category</option>
+                                <option value="full">Full Marathon (42km)</option>
+                                <option value="half">Half Marathon (21km)</option>
+                                <option value="10k">10K Run</option>
+                                <option value="fun">Fun Run (5K)</option>
+                            </select>
+                            <span class="error-msg" id="raceCategoryError"></span>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="specialRequests">Special Requests (Optional)</label>
+                        <textarea id="specialRequests" rows="3" placeholder="e.g. early check-in, dietary needs, accessibility requirements..."></textarea>
+                    </div>
+                    <div class="form-group full-width checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span>I confirm I am a registered contestant of the 2026 Tianzhong Marathon and agree to the accommodation guidelines. *</span>
+                        </label>
+                        <span class="error-msg" id="agreeTermsError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Confirm Booking →</button>
+            </form>
+        </div>
+    </div>
+    </main>
+</body>
+</html></content>

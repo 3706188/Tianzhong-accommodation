@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+    <title>stays</title>
+  </head>
+  <body class="stays-page">
+    <header>
+      <a href="Index.html" class="logo">
+        <span class="logo-icon">🏃</span>
+        <span>Tianzhong Stay</span>
+      </a>
+      <div class="navbar">
+        <section class="page">
+          <a href="stays.html">Stays</a>
+          <a href="Index.html#about">About</a>
+          <a href="Index.html#contact">Contact</a>
+        </section>
+      </div>
+    </header>
+    <!-- PAGE INTRO -->
+    <section class="page-hero">
+      <section class="page-hero-content">
+        <div class="section-label">ALL ACCOMMODATIONS</div>
+        <h1>Find a Place to Stay</h1>
+        <p>
+          Choose from a variety of community-provided free accommodations near
+          your race location.
+        </p>
+
+        <!-- SEARCH BAR -->
+        <section class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search by name or description..."
+          />
+          <button id="searchBtn" class="btn btn-primary">Search</button>
+        </section>
+      </section>
+    </section>
+    <!-- 分類按鈕 -->
+    <div class="filters-bar">
+      <span class="filters-label">Filter by:</span>
+      <div class="filters">
+        <button data-filter="all">All</button>
+        <button data-filter="paid">Paid</button>
+        <button data-filter="free">Free</button>
+      </div>
+      <div class="results-count" id="resultsCount"></div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards-section"></div>
+    <div class="card-wrapper"></div>
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">🏃</span>
+            <span>Tianzhong Stay</span>
+          </div>
+          <p>
+            Connecting marathon runners with local community hosts in Tianzhong.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📧 example@email.com</p>
+          <p>📍 Tianzhong, Changhua, Taiwan</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Tianzhong Stay. Made with ❤️ for marathon runners.</p>
+      </div>
+    </footer>
+  </body>
+</html>
