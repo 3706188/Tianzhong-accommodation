@@ -20,20 +20,47 @@
       </div>
     </header>
     <main>
+      <!-- HERO -->
       <section class="hero">
-        <div class="intro">
-          <h1>Find Your Perfect Stay in Tianzhong</h1>
-          <p>Experience local culture and comfortable living</p>
-          <button class="hero-btn" onclick="location.href = 'stays.html'">
-            Explore now
-          </button>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>
+            Find Your Perfect Stay<br />in
+            <span class="highlight">Tianzhong</span>
+          </h1>
+          <p>
+            Free & paid accommodations for marathon contestants — schools,
+            temples, and local homes.
+          </p>
+          <div class="hero-actions">
+            <button
+              class="btn btn-primary"
+              onclick="location.href = 'stays.html'"
+            >
+              Browse Stays
+            </button>
+            <button class="btn btn-outline" onclick="location.href = '#about'">
+              Learn More
+            </button>
+          </div>
         </div>
       </section>
-
       <!-- Featured Stays -->
-      <section class="stays">
-        <h2>Featured Stays</h2>
+      <section class="section-featured">
+        <div class="section-header">
+          <div class="section-label">TOP PICKS</div>
+          <h2>Featured Stays</h2>
+          <p>Handpicked accommodations loved by marathon runners</p>
+        </div>
         <div id="featured-wrapper" class="card-wrapper"></div>
+        <div class="section-footer">
+          <button
+            class="btn btn-primary"
+            onclick="location.href = 'stays.html'"
+          >
+            View All Stays →
+          </button>
+        </div>
       </section>
       <!-- ABOUT -->
       <section class="section-about" id="about">

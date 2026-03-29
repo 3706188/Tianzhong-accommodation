@@ -119,7 +119,7 @@ header {
   padding: 12px 24px;
   font-weight: 700;
   font-size: 0.95rem;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid transparent;
   transition: all 0.25s ease;
   cursor: pointer;
@@ -148,57 +148,6 @@ header {
   background: var(--primary-light);
   padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 12px;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.section-header h2 {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: var(--dark);
-  margin-bottom: 8px;
-}
-.section-header p {
-  color: var(--text-muted);
-  font-size: 1rem;
-}
-
-/*Featured Stay*/
-.hero {
-  height: 600px;
-  background: url("https://picsum.photos/1000") center/cover;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-btn {
-  padding: 10px 20px;
-  background: #8b6f47;
-  color: white;
-  border: none;
-  margin-top: 10px;
-  border-radius: 10px;
-}
-.hero-btn:hover {
-  background-color: rgb(83, 69, 51);
-  transition: background-color 0.3s ease;
-}
-
-.stays {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 0 auto;
-  gap: 20px;
 }
 /* =============================================
    SHARED: CARDS
@@ -206,14 +155,13 @@ header {
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
   align-items: center;
 }
 
 .card {
   background: var(--white);
-  padding: 10px;
   border-radius: 10px;
   overflow: hidden;
   transition:
@@ -232,7 +180,6 @@ header {
 .card-img-wrap img {
   width: 100%;
   height: 200px;
-  border-radius: 10px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -301,7 +248,87 @@ header {
   justify-content: center;
   padding: 10px;
 }
-
+/* =============================================
+   HOME PAGE – HERO
+   ============================================= */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url("https://images.pexels.com/photos/2526878/pexels-photo-2526878.jpeg?_gl=1*1t3xkpg*_ga*MTg2NDc2NTAwNy4xNzczODg1Nzg1*_ga_8JE65Q40S6*czE3NzQ3NjgyNTIkbzYkZzEkdDE3NzQ3NjgyNzMkajM5JGwwJGgw")
+    center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.hero-content h1 .highlight {
+  color: var(--primary);
+  -webkit-text-stroke: 1px var(--primary);
+}
+.hero-content > p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  margin-bottom: 36px;
+  max-width: 440px;
+  line-height: 1.7;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+/*Featured Stay*/
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.section-featured {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+}
 /* =============================================
    HOME PAGE – ABOUT SECTION
    ============================================= */
@@ -353,6 +380,7 @@ header {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
 }
+
 /* =============================================
    STAYS PAGE – PAGE HERO
    ============================================= */
@@ -372,7 +400,7 @@ header {
   font-size: 3rem;
   font-weight: 800;
   color: white;
-  margin-bottom: 12px;
+  margin: 12px 0;
 }
 .page-hero > .page-hero-content > p {
   color: rgba(255, 255, 255, 0.7);
@@ -474,6 +502,7 @@ footer {
   background: var(--dark);
   color: rgba(255, 255, 255, 0.85);
   padding-top: 60px;
+  margin-top: 50px;
 }
 .footer-inner {
   display: grid;
