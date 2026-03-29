@@ -4,7 +4,7 @@ const stays = [
     name: "Hotel A",
     price: 2000,
     type: ["paid"],
-    image: "https://picsum.photos/400/300?random=1",
+    image: "../images/hotel1.jpg",
     address: "Tianzhong Street 1",
     amenities: ["WiFi", "Breakfast", "Air-con"],
     rating: 4.6,
@@ -16,7 +16,7 @@ const stays = [
     name: "Temple Stay",
     price: 0,
     type: ["free", "hot water"],
-    image: "https://picsum.photos/400/300?random=2",
+    image: "../images/temple1.jpg",
     address: "45 Lotus Path, Hills",
     amenities: ["WiFi", "Breakfast", "Air-con"],
     rating: 4.6,
@@ -29,7 +29,7 @@ const stays = [
     name: "School",
     price: 0,
     type: ["free", "sleeping bag"],
-    image: "https://picsum.photos/400/300?random=3",
+    image: "../images/school1.jpg",
     address: "123 Runner Ave, Downtown",
     amenities: ["WiFi", "Breakfast", "Air-con"],
     rating: 4.6,
@@ -42,7 +42,22 @@ const stays = [
 // =============================================
 // HAMBURGER MENU (runs on all pages)
 // =============================================
-
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("open");
+      hamburger.classList.toggle("active");
+    });
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        hamburger.classList.remove("active");
+      });
+    });
+  }
+});
 // =============================================
 // HOME PAGE – Featured Stays
 // =============================================
