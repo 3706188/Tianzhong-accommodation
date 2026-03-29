@@ -14,11 +14,11 @@
         <span>Tianzhong Stay</span>
       </a>
       <div class="navbar">
-        <section class="page">
+
           <a href="stays.html">Stays</a>
           <a href="Index.html#about">About</a>
           <a href="Index.html#contact">Contact</a>
-        </section>
+
       </div>
     </header>
     <!-- BACK BUTTON-->
@@ -26,11 +26,12 @@
         <button class="btn-back" onclick="goBack()">← Back to Stays</button>
     </div>
     <!-- DETAIL CONTENT -->
-    <main class="detail">
-    <h2>Stay Details</h2>
+    <main class="detail-main">
         <div id="detail-container"></div>
-    <!--BOOING FORM-->
-    <div id="booking-section">
+     <!-- =============================================
+             BOOKING SECTION
+    ============================================= -->
+    <div id="booking-section" class="booking-section">
         <div class="booking-card">
             <div class="booking-header">
                 <h2>📋 Book This Stay</h2>
@@ -98,5 +99,44 @@
         </div>
     </div>
     </main>
+    <!-- =============================================
+         SUCCESS MODAL
+      ============================================= -->
+      <div class="modal-overlay" id="successModal" style="display:none">
+        <div class="modal">
+            <div class="modal-icon">🎉</div>
+            <h3>Booking Request Sent!</h3>
+            <p>
+                Thank you,<strong id="confirmedName"></strong>! Your booking request for
+                <strong id="confirmedStay"></strong>has been received.
+            </p>
+            <p class="modal-note">We will verify your bib number <strong id="confirmedBib"></strong> and send a confirmation to your email within 24 hours.</p>
+
+            </p>
+            <button class="btn btn-primary"onclick="location.href='stays.html'">Browse More Stays</button>
+        </div>
+      </div>     
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">🏃</span>
+            <span>Tianzhong Stay</span>
+          </div>
+          <p>
+            Connecting marathon runners with local community hosts in Tianzhong.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📧 example@email.com</p>
+          <p>📍 Tianzhong, Changhua, Taiwan</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Tianzhong Stay. Made with ❤️ for marathon runners.</p>
+      </div>
+    </footer>
 </body>
 </html></content>

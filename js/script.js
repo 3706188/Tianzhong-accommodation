@@ -73,64 +73,42 @@ function renderFeatured(data) {
 // STAYS PAGE
 // =============================================
 if (document.body.classList.contains("stays-page")) {
-  const container = document.querySelector(".card-wrapper");
+  const container = document.getElementById("staysWrapper");
   renderStays(stays);
 
-  // Filter buttons
-  function filterStays(type) {
-    if (type === "all") {
-      renderStays(stays);
-    } else {
-      const filtered = stays.filter((stay) => stay.type.includes(type));
-      renderStays(filtered);
-    }
-  }
-  document.querySelectorAll(".filters button").forEach((btn) => {
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
       const type = btn.dataset.filter;
       if (type === "all") renderStays(stays);
-      else filterStays(type);
+      else {
+        const filtered = stays.filter((s) => {
+          return s.type.includes(type);
+        });
+        renderStays(filtered);
+      }
     });
   });
 
-  //Search
+  // --------------------------------------------------
+  // SEARCH
+  // --------------------------------------------------
   const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
   //Support Enter press
-  searchInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") filterStaysBySearch(searchInput.value);
-  });
-
-  searchBtn.addEventListener("click", () => {
-    filterStaysBySearch(searchInput.value);
-  });
-
-  function goDetail(id) {
-    window.location.href = `detail.html?id=${id}`;
+  if (searchInput) {
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") filterStaysBySearch(searchInput.value);
+    });
   }
-
-  function goBack() {
-    window.location.href = "stays.html";
-  }
-
-  // Event delegation for detail buttons
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".detail-btn");
-    if (btn) {
-      const id = btn.dataset.id;
-      goDetail(id);
-    }
-  });
-  function filterStaysBySearch(term) {
-    const lower = term.trim().toLowerCase();
-    if (!lower) return renderStays(stays);
-    const found = stays.filter(
-      (stay) =>
-        stay.name.toLowerCase().includes(lower) ||
-        stay.address.toLowerCase().includes(lower) ||
-        stay.description.toLowerCase().includes(lower),
-    );
-    renderStays(found);
+  if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+      filterStaysBySearch(searchInput.value);
+    });
   }
   function renderStays(data) {
     if (!container) return;
@@ -172,6 +150,35 @@ if (document.body.classList.contains("stays-page")) {
       container.innerHTML += card;
     });
   }
+  function filterStaysBySearch(term) {
+    const lower = term.trim().toLowerCase();
+    if (!lower) return renderStays(stays);
+    const found = stays.filter(
+      (stay) =>
+        stay.name.toLowerCase().includes(lower) ||
+        stay.address.toLowerCase().includes(lower) ||
+        stay.description.toLowerCase().includes(lower) ||
+        stay.type.some((t) => t.toLowerCase().includes(lower)) ||
+        stay.amenities.some((a) => a.toLowerCase().includes(lower)),
+    );
+    renderStays(found);
+  }
+}
+
+// Event delegation for detail buttons
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".detail-btn");
+  if (btn) {
+    const id = btn.dataset.id;
+    goDetail(id);
+  }
+});
+function goDetail(id) {
+  window.location.href = `detail.html?id=${id}`;
+}
+
+function goBack() {
+  window.location.href = "stays.html";
 }
 
 // =============================================
@@ -231,8 +238,10 @@ if (document.body.classList.contains("detail-page")) {
         <button class="btn btn-primary" onclick="location.href='stays.html'">Browse All Stays</button>
       </div>`;
   }
-
+  // =============================================
   // Booking form submission
+  // =============================================
+
   const bookingForm = document.getElementById("bookingForm");
   if (bookingForm) {
     bookingForm.addEventListener("submit", (e) => {

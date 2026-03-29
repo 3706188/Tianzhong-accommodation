@@ -14,11 +14,9 @@
         <span>Tianzhong Stay</span>
       </a>
       <div class="navbar">
-        <section class="page">
-          <a href="stays.html">Stays</a>
-          <a href="Index.html#about">About</a>
-          <a href="Index.html#contact">Contact</a>
-        </section>
+        <a href="stays.html">Stays</a>
+        <a href="Index.html#about">About</a>
+        <a href="Index.html#contact">Contact</a>
       </div>
     </header>
     <!-- PAGE INTRO -->
@@ -47,16 +45,20 @@
     <div class="filters-bar">
       <span class="filters-label">Filter by:</span>
       <div class="filters">
-        <button data-filter="all">All</button>
-        <button data-filter="paid">Paid</button>
-        <button data-filter="free">Free</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="paid">Paid</button>
+        <button class="filter-btn" data-filter="free">Free</button>
       </div>
       <div class="results-count" id="resultsCount"></div>
     </div>
 
     <!-- CARDS -->
-    <div class="cards-section"></div>
-    <div class="card-wrapper"></div>
+    <div class="cards-section">
+      <div class="card-wrapper" id="staysWrapper"></div>
+      <div class="no-results" id="noResults" style="display: none">
+        <p>😕 No stays found. Try a different search.</p>
+      </div>
+    </div>
     <!-- FOOTER -->
     <footer id="contact">
       <div class="footer-inner">

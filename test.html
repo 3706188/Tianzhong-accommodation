@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header">
+      <h2>Tianzhong Stay</h2>
+    </header>
+    <section class="hero">
+      <div class="hero-bg">
+        <img
+          src="https://images.pexels.com/photos/2526878/pexels-photo-2526878.jpeg?_gl=1*yddafp*_ga*MTg2NDc2NTAwNy4xNzczODg1Nzg1*_ga_8JE65Q40S6*czE3NzQ2MTQxNDIkbzQkZzEkdDE3NzQ2MTQ1NTIkajYwJGwwJGgw"
+          alt="running prepare"
+        />
+      </div>
+
+      <div class="hero-content">
+        <h1>Find Your Stay</h1>
+        <p>Experience Tianzhong</p>
+      </div>
+    </section>
+    <style>
+      header {
+        position: fixed;
+        width: 100%;
+        padding: 20px;
+        transition: 0.3s;
+        z-index: 100;
+      }
+
+      /* 一開始透明 */
+      header.transparent {
+        background: transparent;
+        color: black;
+      }
+
+      /* 滾動後變白 */
+      header.scrolled {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .hero {
+        position: relative;
+        height: 100vh;
+        overflow: visible;
+      }
+
+      /* 黃色大形狀 */
+      .hero-bg {
+        position: absolute;
+        width: 1200px;
+        height: 100%;
+        background: #f4b400;
+
+        /* 不規則形狀 */
+        border-radius: 60% 40% 70% 30% / 60% 30% 70% 40%;
+        overflow: hidden;
+        top: -200px;
+        right: -300px;
+      }
+
+      /* 文字 */
+      .hero-content {
+        position: absolute;
+        left: 10%;
+        top: 40%;
+        transform: translateY(-50%);
+      }
+      :root {
+        --color-primary: #8b6f47;
+        --color-side: #f8f5f2;
+        --color-dec: #d9a441;
+      }
+
+      .hero-bg img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    </style>
+    <script>
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+          header.classList.remove("transparent");
+        } else {
+          header.classList.add("transparent");
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
