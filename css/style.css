@@ -78,6 +78,16 @@ header {
   font-weight: 700;
   letter-spacing: 0.05em;
 }
+.logo strong {
+  color: var(--primary);
+}
+.logo-icon {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.logo:hover .logo-icon {
+  transform: scale(1.4) rotate(-5deg);
+}
 .navbar {
   display: flex;
   gap: 30px;
@@ -390,7 +400,7 @@ header {
    ============================================= */
 
 .section-about {
-  background: var(--dark);
+  background-color: var(--dark);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
@@ -412,7 +422,7 @@ header {
   justify-content: center;
 }
 .about-content .section-label {
-  background: rgba(255, 87, 34, 0.2);
+  background-color: rgba(145, 63, 38, 0.741);
 }
 .about-content h2 {
   font-family: var(--font-display);

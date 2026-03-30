@@ -4,7 +4,8 @@ const stays = [
     name: "Hotel A",
     price: 2000,
     type: ["paid"],
-    image: "../images/hotel1.jpg",
+    image:
+      "https://images.pexels.com/photos/34956629/pexels-photo-34956629.jpeg?_gl=1*y4xxsz*_ga*MTg2NDc2NTAwNy4xNzczODg1Nzg1*_ga_8JE65Q40S6*czE3NzQ3ODg0MDckbzckZzEkdDE3NzQ3ODk2NTUkajU5JGwwJGgw",
     address: "Tianzhong Street 1",
     amenities: ["WiFi", "Breakfast", "Air-con"],
     rating: 4.6,
@@ -16,7 +17,8 @@ const stays = [
     name: "Temple Stay",
     price: 0,
     type: ["free", "hot water"],
-    image: "../images/temple1.jpg",
+    image:
+      "https://images.pexels.com/photos/34246738/pexels-photo-34246738.jpeg?_gl=1*1faa745*_ga*MTg2NDc2NTAwNy4xNzczODg1Nzg1*_ga_8JE65Q40S6*czE3NzQ3ODg0MDckbzckZzEkdDE3NzQ3ODk0MzckajQzJGwwJGgw",
     address: "45 Lotus Path, Hills",
     amenities: ["WiFi", "Breakfast", "Air-con"],
     rating: 4.6,
@@ -29,7 +31,8 @@ const stays = [
     name: "School",
     price: 0,
     type: ["free", "sleeping bag"],
-    image: "../images/school1.jpg",
+    image:
+      "https://images.pexels.com/photos/35385546/pexels-photo-35385546.jpeg?_gl=1*zj46kg*_ga*MTg2NDc2NTAwNy4xNzczODg1Nzg1*_ga_8JE65Q40S6*czE3NzQ3ODg0MDckbzckZzEkdDE3NzQ3ODkwODgkajYwJGwwJGgw",
     address: "123 Runner Ave, Downtown",
     amenities: ["WiFi", "Breakfast", "Air-con"],
     rating: 4.6,
