@@ -147,6 +147,11 @@ header {
 }
 /* Mobile nav */
 .mobile-nav {
+  position: fixed;
+  top: 10;
+  left: 0;
+  right: 0;
+  z-index: 999;
   display: none;
   flex-direction: column;
   background: var(--white);
@@ -160,6 +165,7 @@ header {
 }
 .mobile-nav.open {
   max-height: 300px;
+  transform: translateY(0);
 }
 .mobile-nav a {
   padding: 14px 40px;

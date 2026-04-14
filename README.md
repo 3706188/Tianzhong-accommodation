@@ -5,6 +5,7 @@ A web platform for marathon participants to find free or paid accommodations nea
 ## 🌐 Live Demo
 
 [Repositories](https://github.com/3706188/Tianzhong-accommodation)
+
 [Live Site URL](https://3706188.github.io/Tianzhong-accommodation/)
 
 ## 📸 Screenshots
@@ -32,12 +33,6 @@ Clone the repo and open `index.html` in your browser.
 ```bash
 git clone https://github.com/3706188/Tianzhong-accommodation.git
 ```
-
-## 📌 Roadmap
-
-- [ ] Booking form with validation
-- [ ] User comments / reviews
-- [ ] Backend integration
 
 ## 👨‍💻 Author
 
